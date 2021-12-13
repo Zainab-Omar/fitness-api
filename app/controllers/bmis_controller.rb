@@ -1,2 +1,0 @@
-class BmisController < ApplicationController
-end
