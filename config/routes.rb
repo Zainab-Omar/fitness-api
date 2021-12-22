@@ -10,8 +10,15 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users do
+        get '/profile', to: 'users#profile'
         resources :exercises
       end
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :auth
     end
   end
   
