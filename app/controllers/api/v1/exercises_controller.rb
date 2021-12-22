@@ -1,13 +1,14 @@
 class Api::V1::ExercisesController < ApplicationController
     skip_before_action :authorized
+    before_action :set_user
 
     def index
-        exercises = Exercise.all
-        render json: @exercises
+        exercises = @user.exercises
+        render json: exercises
     end
 
     def create
-        exercise = Exercise.create(exercise_params)
+        exercise = @user.exercises.create(exercise_params)
         if exercise.save
             render json: exercise
         else
@@ -16,20 +17,24 @@ class Api::V1::ExercisesController < ApplicationController
     end
 
     def show
-        exercise = Exercise.find(params[:id])
+        exercise = @user.exercises.find(params[:id])
         render json: exercise
     end
 
     def destroy
-        exercise = Exercise.find(params[id])
+        exercise = @user.exercises.find(params[id])
         exercise.destroy
         render json: exercise
     end
 
     private
+    def set_user
+        @user = User.find(params[:user_id])
+    end
+
     def exercise_params
         params.require(:exercise).permit(:body_part, :equipment, :gif_url, :name, :target, :user_id)
     end
-    
+
 end
 
