@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_12_13_200956) do
   create_table "bmis", force: :cascade do |t|
     t.float "bmi"
     t.string "health"
-    t.string "health_bmi_range"
+    t.string "healthy_bmi_range"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

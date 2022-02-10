@@ -15,14 +15,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # namespace :api do
-  #   namespace :v1 do
-  #     resources :users do
-  #       resources :bmis
-  #     end
-  #   end
-  # end
-
   namespace :api do
     namespace :v1 do
       get '/profile', to: 'users#profile'
