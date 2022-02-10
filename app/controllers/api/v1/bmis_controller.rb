@@ -1,6 +1,6 @@
 class Api::V1::BmisController < ApplicationController
     skip_before_action :authorized
-    before_action: :set_user
+    before_action :set_user
 
 
     def create
@@ -16,7 +16,7 @@ class Api::V1::BmisController < ApplicationController
 
     private
     def bmi_params
-        params.require(:bmi).permit(:bmi, :health, :healthy_bmi_range, user_id)
+        params.require(:bmi).permit(:bmi, :health, :healthy_bmi_range, :user_id)
     end
 
     def set_user
