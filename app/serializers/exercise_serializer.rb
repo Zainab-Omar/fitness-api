@@ -1,5 +1,5 @@
 class ExerciseSerializer
   include JSONAPI::Serializer
-  attributes :body_part, :equipment, :gif_url, :name, :target
+  attributes :bodyPart, :equipment, :gifUrl, :name, :target
   belongs_to :user
 end

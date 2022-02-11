@@ -1,5 +1,5 @@
 class Exercise < ApplicationRecord
     belongs_to :user
 
-    validates :body_part, :equipment, :gif_url, :name, :target, presence: true
+    validates :bodyPart, :equipment, :gifUrl, :name, :target, presence: true
 end

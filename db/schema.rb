@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 2021_12_13_200956) do
   end
 
   create_table "exercises", force: :cascade do |t|
-    t.string "body_part"
+    t.string "bodyPart"
     t.string "equipment"
-    t.string "gif_url"
+    t.string "gifUrl"
     t.string "name"
     t.string "target"
     t.integer "user_id"

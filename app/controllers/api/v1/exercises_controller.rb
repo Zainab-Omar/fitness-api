@@ -8,6 +8,7 @@ class Api::V1::ExercisesController < ApplicationController
     end
 
     def create
+        # binding.pry
         exercise = @user.exercises.create(exercise_params)
         if exercise.save
             render json: exercise
@@ -33,7 +34,7 @@ class Api::V1::ExercisesController < ApplicationController
     end
 
     def exercise_params
-        params.require(:exercise).permit(:body_part, :equipment, :gif_url, :name, :target, :user_id)
+        params.require(:exercise).permit(:bodyPart, :equipment, :gifUrl, :name, :target, :user_id)
     end
 
 end

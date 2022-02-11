@@ -4,7 +4,6 @@ class Api::V1::BmisController < ApplicationController
 
 
     def create
-        binding.pry
         bmi = @user.bmis.new(bmi_params)
         if bmi.save
             render json: bmi
